@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-bg-primary text-text-primary;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-bg-primary min-h-screen;
+  }
+
+  * {
+    @apply border-bg-border;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-primary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2a2a40;
+  }
+}
+
+@layer components {
+
+  /* ── Card ── */
+  .card {
+    @apply bg-bg-card border border-bg-border rounded-xl shadow-card-glow;
+  }
+
+  /* ── Input ── */
+  .input {
+    @apply w-full bg-bg-secondary border border-bg-border rounded-lg px-3 py-2.5 text-text-primary text-sm placeholder-text-muted focus:outline-none focus:border-accent-gold focus:ring-1 focus:ring-accent-gold/30 transition-colors duration-150;
+  }
+
+  .input-error {
+    @apply border-outcome-loss focus:border-outcome-loss focus:ring-outcome-loss/30;
+  }
+
+  /* ── Label ── */
+  .label {
+    @apply block text-xs font-medium text-text-secondary uppercase tracking-wider mb-1.5;
+  }
+
+  /* ── Button variants ── */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent-gold text-bg-primary hover:bg-amber-400 shadow-gold hover:shadow-none active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply btn bg-bg-border text-text-primary hover:bg-bg-hover active:scale-95;
+  }
+
+  .btn-danger {
+    @apply btn bg-outcome-loss-bg text-outcome-loss border border-outcome-loss/30 hover:bg-outcome-loss hover:text-white active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply btn text-text-secondary hover:text-text-primary hover:bg-bg-hover active:scale-95;
+  }
+
+  /* ── Badge ── */
+  .badge {
+    @apply inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium;
+  }
+
+  .badge-win {
+    @apply badge bg-outcome-win-bg text-outcome-win;
+  }
+
+  .badge-loss {
+    @apply badge bg-outcome-loss-bg text-outcome-loss;
+  }
+
+  .badge-be {
+    @apply badge bg-outcome-be-bg text-outcome-be;
+  }
+
+  .badge-long {
+    @apply badge bg-outcome-win-bg text-outcome-win;
+  }
+
+  .badge-short {
+    @apply badge bg-outcome-loss-bg text-outcome-loss;
+  }
+
+  /* ── Number (monospace) ── */
+  .num {
+    font-family: 'DM Mono', monospace;
+    @apply tabular-nums;
+  }
+
+  /* ── Stat card ── */
+  .stat-card {
+    @apply card p-5 flex flex-col gap-1;
+  }
+
+  /* ── Error text ── */
+  .error-text {
+    @apply text-xs text-outcome-loss mt-1;
+  }
+
+  /* ── Select ── */
+  select.input {
+    @apply cursor-pointer;
+  }
+
+  /* ── Checkbox ── */
+  input[type='checkbox'] {
+    @apply w-4 h-4 rounded border-bg-border bg-bg-secondary accent-accent-gold cursor-pointer;
+  }
+}
+
+/* ── Animate in ── */
+.animate-in {
+  animation: slideUp 0.25s ease-out both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Table striping ── */
+.trade-table tbody tr:hover {
+  @apply bg-bg-hover;
+}
+
+@layer utilities {
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+}
