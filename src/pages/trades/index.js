@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
+
 import { getTrades, deleteTrade, updateTrade } from '../../lib/api';
 import { useAuth } from '../../context/AuthContext';
 import Modal from '../../components/Modal';
