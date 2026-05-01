@@ -74,47 +74,6 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 
 ---
 
-## Project Structure
-
-```
-frontend/
-├── next.config.js
-├── tailwind.config.js
-├── postcss.config.js
-└── src/
-    ├── context/
-    │   └── AuthContext.js        ← Global auth state, login/logout, authFetch helper
-    ├── lib/
-    │   └── api.js                ← All API calls (pass authFetch from useAuth())
-    ├── styles/
-    │   └── globals.css           ← Tailwind layers — card, input, btn, badge utilities
-    ├── components/
-    │   ├── Layout.js             ← Nav with user menu, role-aware links, logout
-    │   ├── TradeForm.js          ← Add/Edit trade form (auto RR calc)
-    │   ├── ReflectionForm.js     ← Emotional state picker + text fields
-    │   ├── Modal.js              ← Reusable modal
-    │   ├── StatCard.js           ← Dashboard metric card
-    │   ├── LoadingSpinner.js     ← Spinner + skeleton loaders
-    │   └── charts/Charts.js     ← WinLoss pie, Risk trend, Risk-by-outcome bar
-    └── pages/
-        ├── login.js              ← Login page (no layout wrapper)
-        ├── signup.js             ← Signup page (no layout wrapper)
-        ├── index.js              ← User dashboard
-        ├── evaluation.js         ← Usability survey
-        ├── 404.js                ← Custom 404 page
-        ├── trades/
-        │   ├── add.js            ← Add trade form
-        │   ├── index.js          ← Trade log (sortable, searchable, edit/delete)
-        │   └── [id]/reflection.js ← Trade detail + reflections
-        └── admin/
-            ├── index.js          ← Admin overview + platform stats
-            ├── users.js          ← User management (CRUD, activate, role)
-            ├── trades.js         ← All trades monitor (filterable)
-            └── evals.js          ← Evaluation responses + aggregate scores
-```
-
----
-
 ## Role Permissions
 
 | Action                         | User | Admin |
