@@ -90,7 +90,7 @@ export default function EvaluationPage() {
           <p className="text-text-muted text-sm">QHO634 Dissertation — Southampton Solent University · Please complete after using the system.</p>
         </div>
         <div className="card p-4 mb-5 border-accent-gold/20">
-          <p className="text-xs text-text-secondary leading-relaxed"><strong className="text-accent-gold">Study context:</strong> This evaluation is part of a Master&apos;s dissertation studying the usability and effectiveness of a trade journaling system for retail traders. Responses are anonymous and used only for academic analysis.</p>
+          <p className="text-xs text-text-secondary leading-relaxed"><strong className="text-accent-gold">Study context:</strong> This evaluation is part of a dissertation studying the usability and effectiveness of a trade journaling system for retail traders. Responses are anonymous and used only for academic analysis.</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="card p-5 space-y-6">
